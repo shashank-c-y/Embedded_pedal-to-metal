@@ -25,3 +25,6 @@ In VS Code:
 1. Build the STM32 project so the ELF exists.
 2. Open `diagram.json`.
 3. Start the Wokwi simulator.
+
+<img width="1134" height="922" alt="image" src="https://github.com/user-attachments/assets/c8fab17e-4411-454f-b924-dffb28337a34" />
+
