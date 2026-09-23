@@ -1,0 +1,4 @@
+[wokwi]
+firmware = "Debug/adc.elf"
+elf = "Debug/adc.elf"
+rfc2217ServerPort = 5001
