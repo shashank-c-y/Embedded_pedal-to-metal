@@ -6,75 +6,136 @@
     {
       "type": "board-st-nucleo-c031c6",
       "id": "nucleo",
-      "top": 0,
-      "left": 80,
+      "top": 0.83,
+      "left": -0.98,
       "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 272.75,
+      "left": 412.8,
+      "rotate": 180,
+      "attrs": {
+        "value": "330"
+      }
     },
     {
       "type": "wokwi-potentiometer",
       "id": "pot1",
-      "top": 80,
-      "left": -180,
+      "top": 17.9,
+      "left": -125,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 129.05,
+      "left": 373,
+      "rotate": 180,
       "attrs": {
-        "label": "ADC input (PA1)"
+        "value": "330"
       }
     },
     {
       "type": "wokwi-led",
       "id": "led1",
-      "top": 60,
-      "left": 390,
+      "top": 63.6,
+      "left": 426.2,
       "attrs": {
-        "color": "red",
-        "label": "PA5 LED"
+        "color": "red"
       }
     },
     {
-      "type": "wokwi-resistor",
-      "id": "r1",
-      "top": 135,
-      "left": 430,
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 188.4,
+      "left": 531.8,
       "attrs": {
-        "value": "330"
+        "color": "red"
       }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -30.8,
+      "left": 547.2,
+      "attrs": {}
     }
   ],
   "connections": [
     [
-      "pot1:VCC",
+      "$serialMonitor:TX",
+      "nucleo:PA3",
+      "",
+      []
+    ],
+    [
+      "$serialMonitor:RX",
+      "nucleo:PA2",
+      "",
+      []
+    ],
+    [
       "nucleo:3V3.1",
+      "pot1:VCC",
       "red",
       [
-        "v0"
+        "h0"
       ]
     ],
     [
-      "pot1:GND",
       "nucleo:GND.1",
+      "pot1:GND",
       "black",
       [
-        "v0"
+        "h0"
       ]
     ],
     [
-      "pot1:SIG",
       "nucleo:PA1",
+      "pot1:SIG",
       "orange",
       [
-        "v0"
+        "h0"
       ]
     ],
     [
-      "nucleo:PA5",
+      "nucleo:PA6",
       "led1:A",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "nucleo:PA7",
+      "led2:A",
+      "green",
+      [
+        "v135.23",
+        "h313.17"
+      ]
+    ],
+    [
+      "led1:C",
+      "r2:1",
       "green",
       [
         "v0"
       ]
     ],
     [
-      "led1:C",
+      "nucleo:GND.9",
+      "r2:2",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
       "r1:1",
+      "led2:C",
       "green",
       [
         "v0"
@@ -83,9 +144,34 @@
     [
       "r1:2",
       "nucleo:GND.9",
-      "black",
+      "green",
       [
         "v0"
+      ]
+    ],
+    [
+      "servo1:V+",
+      "nucleo:5V.2",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "servo1:GND",
+      "nucleo:GND.5",
+      "black",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "nucleo:PA8",
+      "servo1:PWM",
+      "green",
+      [
+        "h208.55",
+        "v-192.2"
       ]
     ],
     [

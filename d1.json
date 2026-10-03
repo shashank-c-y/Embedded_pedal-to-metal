@@ -1,0 +1,108 @@
+{
+    "version": 1,
+    "author": "STM32 ADC project",
+    "editor": "wokwi",
+    "parts": [
+        {
+            "type": "board-st-nucleo-c031c6",
+            "id": "nucleo",
+            "top": 0,
+            "left": 80,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-potentiometer",
+            "id": "pot1",
+            "top": 80,
+            "left": -180,
+            "attrs": {
+                "label": "ADC input (PA1)"
+            }
+        },
+        {
+            "type": "wokwi-led",
+            "id": "led1",
+            "top": 60,
+            "left": 390,
+            "attrs": {
+                "color": "red",
+                "label": "PA5 LED"
+            }
+        },
+        {
+            "type": "wokwi-resistor",
+            "id": "r1",
+            "top": 135,
+            "left": 430,
+            "attrs": {
+                "value": "330"
+            }
+        }
+    ],
+    "connections": [
+        [
+            "pot1:VCC",
+            "nucleo:3V3.1",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "pot1:GND",
+            "nucleo:GND.1",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "pot1:SIG",
+            "nucleo:PA1",
+            "orange",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "nucleo:PA5",
+            "led1:A",
+            "green",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "led1:C",
+            "r1:1",
+            "green",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "r1:2",
+            "nucleo:GND.9",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "nucleo:PA0",
+            "$serialMonitor:RX",
+            "",
+            []
+        ],
+        [
+            "nucleo:PB2",
+            "$serialMonitor:TX",
+            "",
+            []
+        ]
+    ],
+    "serialMonitor": {
+        "display": "always"
+    },
+    "dependencies": {}
+}
