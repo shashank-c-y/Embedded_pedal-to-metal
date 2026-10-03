@@ -1,4 +1,4 @@
-# STM32C031C6 ADC + Potentiometer + LED — Wokwi
+# STM32C031C6 ADC + Potentiometer + 2 Resistor + 2LED + Servomotor — Wokwi
 
 Files:
 - `diagram.json` — NUCLEO-C031C6, potentiometer, external LED + 330 ohm resistor, and serial monitor.
@@ -27,4 +27,7 @@ In VS Code:
 3. Start the Wokwi simulator.
 
 <img width="1134" height="922" alt="image" src="https://github.com/user-attachments/assets/c8fab17e-4411-454f-b924-dffb28337a34" />
+
+<img width="1136" height="939" alt="image" src="https://github.com/user-attachments/assets/9311ca75-26c3-45d7-9f48-8957b28ab933" />
+
 
